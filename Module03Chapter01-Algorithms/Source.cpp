@@ -119,6 +119,6 @@ int main() {
 
 	int dist = myPath.findPath('a', 'd');
 
-	std::cout << "\nPath found in #steps: " << dist << "\n";
+	std::cout << "\nPath found in "<< dist << " steps\n";
 	return 0;
 }
