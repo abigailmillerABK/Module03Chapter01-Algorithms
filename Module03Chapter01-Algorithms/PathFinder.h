@@ -63,7 +63,7 @@ public:
 			Node* activeNode = nullptr;
 			std::list<Node*>::iterator charPtr;
 			for (charPtr = unknownNodes.begin(); charPtr != unknownNodes.end(); charPtr++) {
-				if ((*charPtr)->dist != -1 && (*charPtr)->dist < dist) {
+				if ((*charPtr)->dist != -1 && ((*charPtr)->dist+(*charPtr)->heuristic < dist)) {
 					dist = (*charPtr)->dist;
 					activeNode = *charPtr;
 				}
