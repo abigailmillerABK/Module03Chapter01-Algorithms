@@ -1,7 +1,6 @@
 #pragma once
 
-class Edge {
-public:
+struct Edge {
 	int cost;
 	char to;
 

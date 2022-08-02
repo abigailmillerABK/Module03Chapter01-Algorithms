@@ -2,8 +2,7 @@
 #include "Edge.h"
 #include <list>
 
-class Node {
-public:
+struct Node {
 	char ID;
 	int dist;
 	int heuristic;
@@ -12,7 +11,7 @@ public:
 
 	Node(char newID) {
 		ID = newID;
-		dist = -1;
+		dist = -1; //uninitialized
 		heuristic = 0;
 		lastNode = nullptr;
 	}
