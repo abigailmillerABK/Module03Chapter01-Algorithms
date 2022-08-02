@@ -25,9 +25,7 @@ It should also find the cheapest path, making sure to output the cost of the pat
 #include <chrono>
 #include <string>
 #include "Node.h"
-#include "SearchTree.h"
-
-
+#include "PathFinder.h"
 
 void printArray(int thisList[], int sizeOf) {
 	std::cout << "\nArray values:\n";
@@ -113,13 +111,14 @@ int main() {
 	LinearSearch(myData, dataSize, 25);
 	BinarySearch(myData, dataSize, 25);
 
-	////Build a path map
-	//SearchTree myTree = SearchTree();
-	//myTree.NewPath('a', 'b', 5);
-	//myTree.NewPath('b', 'c', 1);
-	//myTree.NewPath('a', 'd', 7);
-	//myTree.NewPath('c', 'd', 1);
-	//int pathLength = myTree.GetShortestPath('a', 'd');
-	////std::cout << "\npathLength: " << pathLength;
+	PathFinder myPath;
+	myPath.addPath('a','b',5);
+	myPath.addPath('b', 'c', 1);
+	myPath.addPath('a', 'd', 8);
+	myPath.addPath('c', 'd', 1);
+
+	int dist = myPath.findPath('a', 'd');
+
+	std::cout << "\nPath found in #steps: " << dist << "\n";
 	return 0;
 }
